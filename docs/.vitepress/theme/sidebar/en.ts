@@ -68,7 +68,7 @@ export const enSidebar: DefaultTheme.Sidebar = {
         },
         {
           text: "Installation & Deployment",
-          link: "/installation/agione-environment-installation-deployment"
+          link: "/installation/agione-quick-install"
         },
         {
           text: "Compute Nodes-Requirements",
