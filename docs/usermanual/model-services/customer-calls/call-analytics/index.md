@@ -4,7 +4,7 @@
 
 | Item            | Content                                                                                         |
 | --------------- | ----------------------------------------------------------------------------------------------- |
-| Target Audience | User                                                                                            |
+| Target Audience | Provider                                                                                    |
 | Navigation Path | Customer Calls > Call Analytics                                                                 |
 | Overview        | View call statistics by customer or model dimension to support in-depth analysis of call status |
 

@@ -2,11 +2,11 @@
 
 ## Preface
 
-| Item | Content |
-|------|---------|
-| Target Audience | User |
-| Navigation Path | Customer Calls > Call Logs |
-| Overview | View all customers' model call logs, supporting filtering by customer, model, status, and other dimensions |
+| Item            | Content                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------- |
+| Target Audience | Provider                                                                                               |
+| Navigation Path | Customer Calls > Call Logs                                                                                 |
+| Overview        | View all customers' model call logs, supporting filtering by customer, model, status, and other dimensions |
 
 ## Page Structure
 

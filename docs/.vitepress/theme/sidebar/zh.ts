@@ -116,6 +116,15 @@ export const zhSidebar: DefaultTheme.Sidebar = {
               ]
             },
             {
+              text: '我的调用',
+              collapsed: false,
+              items: [
+                { text: '概览', link: '/zh/usermanual/model-services/my-calls/overview/' },
+                { text: '调用分析', link: '/zh/usermanual/model-services/my-calls/call-analytics/' },
+                { text: '调用日志', link: '/zh/usermanual/model-services/my-calls/call-logs/' },
+              ]
+            },
+            {
               text: '体验中心',
               collapsed: false,
               items: [
@@ -142,7 +151,28 @@ export const zhSidebar: DefaultTheme.Sidebar = {
             },
           ]
         },
-        { text: '多云平台调度', link: '/zh/usermanual/ai-infra-on-cloud/' },
+        {
+          text: '多云调度平台',
+          collapsed: false,
+          items: [
+            {
+              text: '模型服务',
+              collapsed: false,
+              items: [
+                { text: '快速开始', link: '/zh/usermanual/ai-infra-on-cloud/model-services/quick-start/' },
+                { text: '我的部署', link: '/zh/usermanual/ai-infra-on-cloud/model-services/my-deployments/' },
+                { text: '模型画廊', link: '/zh/usermanual/ai-infra-on-cloud/model-services/model-gallery/' },
+              ]
+            },
+            {
+              text: '访问管理',
+              collapsed: false,
+              items: [
+                { text: '访问账号', link: '/zh/usermanual/ai-infra-on-cloud/access-management/access-accounts/' },
+              ]
+            },
+          ]
+        },
         { text: '异构卡纳管', link: '/zh/usermanual/ai-infra-on-prem/' },
       ],
     },

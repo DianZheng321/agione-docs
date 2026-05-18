@@ -2,11 +2,11 @@
 
 ## Preface
 
-| Item | Content |
-|------|---------|
-| Target Audience | User |
-| Navigation Path | Studio > My Models |
-| Overview | Manage and publish your own models, supporting AGIOne hosted deployment, third-party BYOK access, and multi-model aggregation |
+| Item            | Content                                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Target Audience | Provider、User                                                                                                                   |
+| Navigation Path | Studio > My Models                                                                                                            |
+| Overview        | Manage and publish your own models, supporting AGIOne hosted deployment, third-party BYOK access, and multi-model aggregation |
 
 ## Page Structure
 
