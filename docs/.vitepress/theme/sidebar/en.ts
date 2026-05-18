@@ -207,16 +207,16 @@ export const enSidebar: DefaultTheme.Sidebar = {
               text: "Model Services",
               collapsed: false,
               items: [
-                { text: "Quick Start", link: "/usermanual/ai-infra-on-cloud/model-services/quick-start/" },
-                { text: "My Deployments", link: "/usermanual/ai-infra-on-cloud/model-services/my-deployments/" },
-                { text: "Model Gallery", link: "/usermanual/ai-infra-on-cloud/model-services/model-gallery/" },
+                { text: "Quick Start", link: "/usermanual/ai-infra-on-cloud/Model-Services/Quick-Start/" },
+                { text: "My Deployments", link: "/usermanual/ai-infra-on-cloud/Model-Services/My-Deployments/" },
+                { text: "Model Gallery", link: "/usermanual/ai-infra-on-cloud/Model-Services/Model-Gallery/" },
               ]
             },
             {
               text: "Access Management",
               collapsed: false,
               items: [
-                { text: "Access Accounts", link: "/usermanual/ai-infra-on-cloud/access-management/access-accounts/" },
+                { text: "Access Accounts", link: "/usermanual/ai-infra-on-cloud/Access-Management/Access-Accounts/" },
               ]
             },
           ]

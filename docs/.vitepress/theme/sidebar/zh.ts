@@ -159,16 +159,16 @@ export const zhSidebar: DefaultTheme.Sidebar = {
               text: '模型服务',
               collapsed: false,
               items: [
-                { text: '快速开始', link: '/zh/usermanual/ai-infra-on-cloud/model-services/quick-start/' },
-                { text: '我的部署', link: '/zh/usermanual/ai-infra-on-cloud/model-services/my-deployments/' },
-                { text: '模型画廊', link: '/zh/usermanual/ai-infra-on-cloud/model-services/model-gallery/' },
+                { text: '快速开始', link: '/zh/usermanual/ai-infra-on-cloud/Model-Services/Quick-Start/' },
+                { text: '我的部署', link: '/zh/usermanual/ai-infra-on-cloud/Model-Services/My-Deployments/' },
+                { text: '模型画廊', link: '/zh/usermanual/ai-infra-on-cloud/Model-Services/Model-Gallery/' },
               ]
             },
             {
               text: '访问管理',
               collapsed: false,
               items: [
-                { text: '访问账号', link: '/zh/usermanual/ai-infra-on-cloud/access-management/access-accounts/' },
+                { text: '访问账号', link: '/zh/usermanual/ai-infra-on-cloud/Access-Management/Access-Accounts/' },
               ]
             },
           ]
