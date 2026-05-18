@@ -63,12 +63,12 @@ export const enSidebar: DefaultTheme.Sidebar = {
       collapsed: false,
       items: [
         {
-          text: "AGIOne - Requirements",
+          text: "Requirements",
           link: "/installation/agione-deployment-requirements"
         },
         {
-          text: "AGIOne-Installation & Deployment",
-          link: "/installation/agione-environment-installation-deployment"
+          text: "Installation & Deployment",
+          link: "/installation/agione-quick-install"
         },
         {
           text: "Compute Nodes-Requirements",
