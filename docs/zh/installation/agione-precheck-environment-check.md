@@ -24,7 +24,7 @@
 当前 AGIOne 安装器可使用 `doctor` 承担安装前预检职责：
 
 ```bash
-cd /opt/hyperone/agione-release-v1.0-20260513
+cd /opt/hyperone/agione-release-v1.0-20260514
 chmod +x ./agione
 ./agione doctor
 ```
@@ -233,8 +233,8 @@ nc -vz <target-host-ip> 22
 推荐执行顺序：
 
 ```bash
-# 1. 上传并解压 release bundle
-cd /opt/hyperone/agione-release-v1.0-20260513
+# 1. 下载并解压 release bundle
+cd /opt/hyperone/agione-release-v1.0-20260514
 
 # 2. 安装前环境预检
 chmod +x ./agione

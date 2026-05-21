@@ -24,7 +24,7 @@ The purpose of the precheck is to find blocking issues as early as possible, ins
 The AGIOne installer can use `doctor` as the pre-install environment check:
 
 ```bash
-cd /opt/hyperone/agione-release-v1.0-20260513
+cd /opt/hyperone/agione-release-v1.0-20260514
 chmod +x ./agione
 ./agione doctor
 ```
@@ -233,8 +233,8 @@ Enter formal installation only after the following conditions are met:
 Recommended execution sequence:
 
 ```bash
-# 1. Upload and extract the release bundle
-cd /opt/hyperone/agione-release-v1.0-20260513
+# 1. Download and extract the release bundle
+cd /opt/hyperone/agione-release-v1.0-20260514
 
 # 2. Run the pre-install environment check
 chmod +x ./agione

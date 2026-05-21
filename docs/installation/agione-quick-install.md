@@ -22,16 +22,21 @@ Recommended request profile:
 
 ## Quick Install
 
-### 1. Upload bundle
+### 1. Download bundle
 
-Upload `agione-release-v1.0-20260513.tar.gz` to the target host, for example:
+Download `agione-release-v1.0-20260514.tar.gz` on the target host:
+
+**Download URL:** [https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz](https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz)
+
+Example:
 
 ```bash
-scp -r agione-release-v1.0-20260513.tar.gz root@<target-host>:/opt/hyperone/
 ssh root@<target-host>
+mkdir -p /opt/hyperone && \
 cd /opt/hyperone && \
-tar -zxvf agione-release-v1.0-20260513.tar.gz && \
-cd /opt/hyperone/agione-release-v1.0-20260513
+curl -fL -O https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz && \
+tar -zxvf agione-release-v1.0-20260514.tar.gz && \
+cd /opt/hyperone/agione-release-v1.0-20260514
 ```
 
 ### 2. One-click installation
@@ -366,7 +371,7 @@ At minimum, hand over:
 
 ```bash
 # 1. Enter the bundle directory
-cd /opt/hyperone/agione-release-v1.0-20260513
+cd /opt/hyperone/agione-release-v1.0-20260514
 
 # 2. Grant execute permission to the entry script
 chmod +x ./agione

@@ -9,7 +9,7 @@
 | Item | Description |
 | ---- | ----------- |
 | Scope | AGIOne full-stack deployment solution design, pre-sales support, PoC assessment, and production delivery |
-| Constraint Level | This document serves as a planning reference. Official delivery shall be governed by the Release Note and compatibility matrix distributed with `agione-bundle-set-<version>.tar.gz` |
+| Constraint Level | This document serves as a planning reference. Official delivery shall be governed by the Release Note and compatibility matrix distributed with `agione-release-v1.0-20260514.tar.gz` |
 
 ---
 
@@ -206,10 +206,16 @@ Applicable to small-scale scenarios such as demos, testing, and PoC (All-in-One 
 
 ### PoC Quick Verification Checklist
 
+**Download URL:** [https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz](https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz)
+
 ```bash
-# 1. Upload and extract the bundle
-scp agione-bundle-set-<version>.tar.gz root@<target>:/opt/hyperone/
-cd /opt/hyperone && tar -zxvf agione-bundle-set-<version>.tar.gz
+# 1. Download and extract the bundle
+ssh root@<target>
+mkdir -p /opt/hyperone && \
+cd /opt/hyperone && \
+curl -fL -O https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz && \
+tar -zxvf agione-release-v1.0-20260514.tar.gz && \
+cd /opt/hyperone/agione-release-v1.0-20260514
 
 # 2. One-step installation
 chmod +x ./agione

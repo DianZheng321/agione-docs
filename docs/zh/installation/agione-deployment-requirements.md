@@ -9,7 +9,7 @@
 | 项目   | 说明                                                                                                                                                                                                                             |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 适用范围 | AGIOne 全栈部署方案设计、售前支持、PoC 评估、生产交付                                                                                                                                                                                               |
-| 约束级别 | 本文档为规划参考，正式交付应以 `agione-bundle-set-<version>.tar.gz` 配套的 Release Note 与兼容矩阵为准                                                                                                                                                  |
+| 约束级别 | 本文档为规划参考，正式交付应以 `agione-release-v1.0-20260514.tar.gz` 配套的 Release Note 与兼容矩阵为准                                                                                                                                                  |
 
 
 ---
@@ -208,10 +208,16 @@
 
 ### PoC 快速检查清单
 
+**下载地址：** [https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz](https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz)
+
 ```bash
-# 1. 上传并解压 bundle
-scp agione-bundle-set-<version>.tar.gz root@<target>:/opt/hyperone/
-cd /opt/hyperone && tar -zxvf agione-bundle-set-<version>.tar.gz
+# 1. 下载并解压 bundle
+ssh root@<target>
+mkdir -p /opt/hyperone && \
+cd /opt/hyperone && \
+curl -fL -O https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz && \
+tar -zxvf agione-release-v1.0-20260514.tar.gz && \
+cd /opt/hyperone/agione-release-v1.0-20260514
 
 # 2. 一键安装
 chmod +x ./agione
