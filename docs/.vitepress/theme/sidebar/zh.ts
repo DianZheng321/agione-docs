@@ -251,11 +251,9 @@ export const zhSidebar: DefaultTheme.Sidebar = {
   ],
   '/zh/others/release-notes/': [
     {
-      text: '版本说明',
+      text: '更新说明',
+      link: '/zh/others/release-notes/',
       collapsed: false,
-      items: [
-        { text: '版本说明（示例）', link: '/zh/others/release-notes/example' },
-      ],
     },
   ],
 }

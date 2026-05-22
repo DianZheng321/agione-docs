@@ -304,13 +304,9 @@ export const enSidebar: DefaultTheme.Sidebar = {
   ],
   "/others/release-notes/": [
     {
-      text: "Release Notes",
+      text: "Update Notes",
+      link: "/others/release-notes/",
       collapsed: false,
-      items: [
-        {
-          text: "Release Notes (Example)", link: "/others/release-notes/example",
-        }
-      ]
     }
   ],
 }
