@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="-apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', sans-serif">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafbfc"/>
+      <stop offset="100%" stop-color="#f0f3f7"/>
+    </linearGradient>
+    <linearGradient id="poolGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#fef3c7" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="cardShadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow5p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrow5o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg5)"/>
+
+  <text x="600" y="36" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Compute Node Onboarding Architecture</text>
+  <text x="600" y="58" text-anchor="middle" font-size="12" fill="#64748b">Compute Pool Management · Kubernetes · Near-Node Images · GPU/NPU Scheduling</text>
+
+  <!-- AGIOne Platform Management top -->
+  <g transform="translate(380, 90)">
+    <rect x="0" y="0" width="440" height="74" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" filter="url(#cardShadow5)"/>
+    <rect x="0" y="0" width="6" height="74" rx="3" fill="#7c3aed"/>
+    <g transform="translate(22, 18)">
+      <rect x="0" y="0" width="32" height="32" rx="5" fill="#7c3aed"/>
+      <path d="M 8 16 L 13 21 L 24 10" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="68" y="32" font-size="14" font-weight="700" fill="#3b0764">AGIOne Management Plane</text>
+    <text x="68" y="54" font-size="11.5" fill="#6d28d9">Management Plane · Scheduling Entry · Monitoring Aggregation</text>
+  </g>
+
+  <!-- Port label band -->
+  <g transform="translate(380, 184)">
+    <rect x="0" y="0" width="440" height="40" rx="6" fill="#fff" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="4 2"/>
+    <text x="220" y="16" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7c3aed">Manage compute clusters through these ports:</text>
+    <text x="20" y="32" font-size="10.5" fill="#6d28d9" font-weight="600">6443</text>
+    <text x="52" y="32" font-size="10" fill="#64748b">K8s API</text>
+    <text x="115" y="32" font-size="10.5" fill="#6d28d9" font-weight="600">32761</text>
+    <text x="150" y="32" font-size="10" fill="#64748b">Monitoring</text>
+    <text x="195" y="32" font-size="10.5" fill="#6d28d9" font-weight="600">32762</text>
+    <text x="230" y="32" font-size="10" fill="#64748b">Model/IDE</text>
+    <text x="295" y="32" font-size="10.5" fill="#6d28d9" font-weight="600">32763</text>
+    <text x="332" y="32" font-size="10" fill="#64748b">Reserved</text>
+    <text x="370" y="32" font-size="10.5" fill="#6d28d9" font-weight="600">32764/65</text>
+  </g>
+
+  <!-- Arrows down from management to two pools -->
+  <path d="M 460 224 Q 460 250 280 280" stroke="#7c3aed" stroke-width="2" fill="none" marker-end="url(#arrow5p)"/>
+  <path d="M 740 224 Q 740 250 920 280" stroke="#7c3aed" stroke-width="2" fill="none" marker-end="url(#arrow5p)"/>
+
+  <!-- Pool A (left): <3 nodes scenario -->
+  <g transform="translate(40, 280)">
+    <rect x="0" y="0" width="540" height="380" rx="12" fill="url(#poolGrad)" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6 3"/>
+    <g transform="translate(20, -14)">
+      <rect x="0" y="0" width="200" height="28" rx="14" fill="#d97706"/>
+      <text x="100" y="19" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" letter-spacing="1">Compute Pool A · Nodes &lt; 3</text>
+    </g>
+
+    <!-- K8s control plane (single) -->
+    <g transform="translate(30, 40)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#92400e" letter-spacing="1">KUBERNETES Control Plane · Single Node</text>
+      <g transform="translate(0, 14)">
+        <rect x="0" y="0" width="160" height="80" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(14, 16)">
+          <polygon points="14,2 24,8 24,18 14,24 4,18 4,8" fill="#d97706"/>
+          <polygon points="14,2 24,8 14,14 4,8" fill="#fbbf24"/>
+          <text x="14" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#78350f">k8s</text>
+        </g>
+        <text x="50" y="26" font-size="12" font-weight="700" fill="#78350f">Master Node</text>
+        <text x="50" y="42" font-size="10" fill="#92400e">API · Scheduler · etcd</text>
+        <line x1="14" y1="56" x2="146" y2="56" stroke="#fef3c7" stroke-width="1"/>
+        <text x="14" y="72" font-size="10" fill="#64748b">Only 1 Node (Total Nodes &lt; 3)</text>
+      </g>
+    </g>
+
+    <!-- Registry -->
+    <g transform="translate(220, 40)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#92400e" letter-spacing="1">Near-Node Image Service</text>
+      <g transform="translate(0, 14)">
+        <rect x="0" y="0" width="160" height="80" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(14, 16)">
+          <rect x="0" y="4" width="28" height="20" rx="3" fill="#d97706"/>
+          <rect x="3" y="7" width="7" height="3" fill="#fbbf24"/>
+          <rect x="13" y="7" width="7" height="3" fill="#fbbf24"/>
+          <rect x="3" y="13" width="7" height="3" fill="#fbbf24"/>
+          <rect x="13" y="13" width="7" height="3" fill="#fbbf24"/>
+          <rect x="3" y="19" width="7" height="3" fill="#fbbf24"/>
+        </g>
+        <text x="50" y="26" font-size="12" font-weight="700" fill="#78350f">Registry</text>
+        <text x="50" y="42" font-size="10" fill="#92400e">Image Distribution</text>
+        <line x1="14" y1="56" x2="146" y2="56" stroke="#fef3c7" stroke-width="1"/>
+        <text x="14" y="72" font-size="10" fill="#64748b">Reuses Compute Node Resources</text>
+      </g>
+    </g>
+
+    <!-- Addons -->
+    <g transform="translate(400, 40)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#92400e" letter-spacing="1">Supporting Plugins</text>
+      <g transform="translate(0, 14)">
+        <rect x="0" y="0" width="110" height="80" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <text x="55" y="22" text-anchor="middle" font-size="10.5" fill="#78350f" font-weight="600">Scheduling Plugin</text>
+        <text x="55" y="40" text-anchor="middle" font-size="10.5" fill="#78350f" font-weight="600">Monitoring Plugin</text>
+        <text x="55" y="58" text-anchor="middle" font-size="10.5" fill="#78350f" font-weight="600">Logging Component</text>
+        <text x="55" y="74" text-anchor="middle" font-size="9.5" fill="#92400e">…</text>
+      </g>
+    </g>
+
+    <!-- GPU/NPU Workers -->
+    <g transform="translate(30, 170)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#92400e" letter-spacing="1">Compute Worker Nodes · GPU / NPU</text>
+      <g transform="translate(0, 14)">
+        <rect x="0" y="0" width="120" height="170" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(46, 16)">
+          <rect x="0" y="0" width="28" height="28" rx="4" fill="#d97706"/>
+          <text x="14" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">GPU</text>
+        </g>
+        <text x="60" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#78350f">Worker #1</text>
+        <line x1="14" y1="72" x2="106" y2="72" stroke="#fef3c7" stroke-width="1"/>
+        <text x="60" y="90" text-anchor="middle" font-size="10" fill="#475569">GPU Cards xN</text>
+        <text x="60" y="106" text-anchor="middle" font-size="10" fill="#475569">Drivers + RT</text>
+        <text x="60" y="122" text-anchor="middle" font-size="10" fill="#475569">device plugin</text>
+        <text x="60" y="148" text-anchor="middle" font-size="10" font-style="italic" fill="#92400e">Training / Inference</text>
+      </g>
+
+      <g transform="translate(140, 14)">
+        <rect x="0" y="0" width="120" height="170" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(46, 16)">
+          <rect x="0" y="0" width="28" height="28" rx="4" fill="#d97706"/>
+          <text x="14" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">NPU</text>
+        </g>
+        <text x="60" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#78350f">Worker #2</text>
+        <line x1="14" y1="72" x2="106" y2="72" stroke="#fef3c7" stroke-width="1"/>
+        <text x="60" y="90" text-anchor="middle" font-size="10" fill="#475569">NPU Cards xN</text>
+        <text x="60" y="106" text-anchor="middle" font-size="10" fill="#475569">Drivers + RT</text>
+        <text x="60" y="122" text-anchor="middle" font-size="10" fill="#475569">device plugin</text>
+        <text x="60" y="148" text-anchor="middle" font-size="10" font-style="italic" fill="#92400e">Inference / IDE</text>
+      </g>
+
+      <g transform="translate(280, 14)">
+        <rect x="0" y="0" width="220" height="170" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="110" y="26" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">Scale Rules</text>
+        <line x1="20" y1="38" x2="200" y2="38" stroke="#fde68a" stroke-width="1"/>
+        <text x="20" y="58" font-size="11" font-weight="600" fill="#78350f">Total Nodes &lt; 3</text>
+        <text x="20" y="74" font-size="10.5" fill="#92400e">-> Deploy 1 K8s Control Plane Node</text>
+        <text x="20" y="98" font-size="11" font-weight="600" fill="#78350f">Total Nodes >= 3</text>
+        <text x="20" y="114" font-size="10.5" fill="#92400e">-> Deploy 3 K8s Control Plane Nodes</text>
+        <text x="20" y="138" font-size="10" fill="#64748b">Highly Available etcd Cluster with Multiple Replicas</text>
+        <text x="20" y="154" font-size="10" fill="#64748b">Avoids Single Point of Failure</text>
+      </g>
+    </g>
+
+    <!-- Internal arrows -->
+    <line x1="190" y1="100" x2="219" y2="100" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="100" y1="124" x2="100" y2="180" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="300" y1="124" x2="220" y2="180" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+  </g>
+
+  <!-- Pool B (right): >=3 nodes scenario -->
+  <g transform="translate(620, 280)">
+    <rect x="0" y="0" width="540" height="380" rx="12" fill="url(#poolGrad)" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6 3"/>
+    <g transform="translate(20, -14)">
+      <rect x="0" y="0" width="200" height="28" rx="14" fill="#d97706"/>
+      <text x="100" y="19" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" letter-spacing="1">Compute Pool B · Nodes >= 3</text>
+    </g>
+
+    <!-- K8s control plane (HA, 3 masters) -->
+    <g transform="translate(30, 40)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#92400e" letter-spacing="1">KUBERNETES Control Plane · 3-Node HA</text>
+      <g transform="translate(0, 14)">
+        <rect x="0" y="0" width="320" height="80" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+
+        <g transform="translate(14, 12)">
+          <polygon points="14,2 24,8 24,18 14,24 4,18 4,8" fill="#d97706"/>
+          <polygon points="14,2 24,8 14,14 4,8" fill="#fbbf24"/>
+        </g>
+        <text x="14" y="62" font-size="10" font-weight="700" fill="#78350f">Master 1</text>
+        <text x="14" y="74" font-size="9" fill="#92400e">API/etcd</text>
+
+        <g transform="translate(114, 12)">
+          <polygon points="14,2 24,8 24,18 14,24 4,18 4,8" fill="#d97706"/>
+          <polygon points="14,2 24,8 14,14 4,8" fill="#fbbf24"/>
+        </g>
+        <text x="114" y="62" font-size="10" font-weight="700" fill="#78350f">Master 2</text>
+        <text x="114" y="74" font-size="9" fill="#92400e">API/etcd</text>
+
+        <g transform="translate(214, 12)">
+          <polygon points="14,2 24,8 24,18 14,24 4,18 4,8" fill="#d97706"/>
+          <polygon points="14,2 24,8 14,14 4,8" fill="#fbbf24"/>
+        </g>
+        <text x="214" y="62" font-size="10" font-weight="700" fill="#78350f">Master 3</text>
+        <text x="214" y="74" font-size="9" fill="#92400e">API/etcd</text>
+
+        <!-- etcd raft connection lines -->
+        <line x1="42" y1="22" x2="118" y2="22" stroke="#d97706" stroke-width="1" stroke-dasharray="2 2"/>
+        <line x1="142" y1="22" x2="218" y2="22" stroke="#d97706" stroke-width="1" stroke-dasharray="2 2"/>
+        <path d="M 28 30 Q 128 50 228 30" fill="none" stroke="#d97706" stroke-width="1" stroke-dasharray="2 2"/>
+      </g>
+    </g>
+
+    <!-- Registry -->
+    <g transform="translate(380, 40)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#92400e" letter-spacing="1">Near-Node Image Service</text>
+      <g transform="translate(0, 14)">
+        <rect x="0" y="0" width="130" height="80" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(14, 16)">
+          <rect x="0" y="4" width="28" height="20" rx="3" fill="#d97706"/>
+          <rect x="3" y="7" width="7" height="3" fill="#fbbf24"/>
+          <rect x="13" y="7" width="7" height="3" fill="#fbbf24"/>
+          <rect x="3" y="13" width="7" height="3" fill="#fbbf24"/>
+          <rect x="13" y="13" width="7" height="3" fill="#fbbf24"/>
+        </g>
+        <text x="50" y="26" font-size="11" font-weight="700" fill="#78350f">Registry</text>
+        <text x="50" y="42" font-size="10" fill="#92400e">Dedicated Deployment</text>
+        <line x1="14" y1="56" x2="116" y2="56" stroke="#fef3c7" stroke-width="1"/>
+        <text x="14" y="72" font-size="9.5" fill="#64748b">Independent per Region</text>
+      </g>
+    </g>
+
+    <!-- GPU Workers -->
+    <g transform="translate(30, 170)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#92400e" letter-spacing="1">Compute Worker Nodes · WORKERS</text>
+
+      <g transform="translate(0, 14)">
+        <rect x="0" y="0" width="110" height="170" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(41, 16)">
+          <rect x="0" y="0" width="28" height="28" rx="4" fill="#d97706"/>
+          <text x="14" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">GPU</text>
+        </g>
+        <text x="55" y="58" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">Worker 1</text>
+        <line x1="14" y1="72" x2="96" y2="72" stroke="#fef3c7" stroke-width="1"/>
+        <text x="55" y="92" text-anchor="middle" font-size="10" fill="#475569">GPU ×N</text>
+        <text x="55" y="108" text-anchor="middle" font-size="10" fill="#475569">Drivers + RT</text>
+        <text x="55" y="148" text-anchor="middle" font-size="10" font-style="italic" fill="#92400e">Training Jobs</text>
+      </g>
+
+      <g transform="translate(120, 14)">
+        <rect x="0" y="0" width="110" height="170" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(41, 16)">
+          <rect x="0" y="0" width="28" height="28" rx="4" fill="#d97706"/>
+          <text x="14" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">GPU</text>
+        </g>
+        <text x="55" y="58" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">Worker 2</text>
+        <line x1="14" y1="72" x2="96" y2="72" stroke="#fef3c7" stroke-width="1"/>
+        <text x="55" y="92" text-anchor="middle" font-size="10" fill="#475569">GPU ×N</text>
+        <text x="55" y="108" text-anchor="middle" font-size="10" fill="#475569">Drivers + RT</text>
+        <text x="55" y="148" text-anchor="middle" font-size="10" font-style="italic" fill="#92400e">Inference Jobs</text>
+      </g>
+
+      <g transform="translate(240, 14)">
+        <rect x="0" y="0" width="110" height="170" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+        <g transform="translate(41, 16)">
+          <rect x="0" y="0" width="28" height="28" rx="4" fill="#d97706"/>
+          <text x="14" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">NPU</text>
+        </g>
+        <text x="55" y="58" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">Worker 3</text>
+        <line x1="14" y1="72" x2="96" y2="72" stroke="#fef3c7" stroke-width="1"/>
+        <text x="55" y="92" text-anchor="middle" font-size="10" fill="#475569">NPU ×N</text>
+        <text x="55" y="108" text-anchor="middle" font-size="10" fill="#475569">Drivers + RT</text>
+        <text x="55" y="148" text-anchor="middle" font-size="10" font-style="italic" fill="#92400e">IDE / Long-Running Jobs</text>
+      </g>
+
+      <g transform="translate(360, 14)">
+        <rect x="0" y="0" width="150" height="170" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="75" y="26" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">Scale Capabilities</text>
+        <line x1="14" y1="38" x2="136" y2="38" stroke="#fde68a" stroke-width="1"/>
+        <text x="14" y="58" font-size="10" fill="#78350f">✓ Highly Available Control Plane</text>
+        <text x="14" y="76" font-size="10" fill="#78350f">✓ Multiple etcd Replicas</text>
+        <text x="14" y="94" font-size="10" fill="#78350f">✓ Scalable Workers</text>
+        <text x="14" y="112" font-size="10" fill="#78350f">✓ Near-Node Image Pulls</text>
+        <text x="75" y="148" text-anchor="middle" font-size="9.5" font-style="italic" fill="#92400e">Recommended for Production</text>
+      </g>
+    </g>
+
+    <!-- Internal arrows -->
+    <line x1="350" y1="100" x2="378" y2="100" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="170" y1="124" x2="100" y2="180" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="190" y1="124" x2="180" y2="180" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="210" y1="124" x2="280" y2="180" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(40, 685)">
+    <text x="0" y="0" font-size="11" font-weight="700" fill="#0f172a">Notes:</text>
+    <text x="50" y="0" font-size="10.5" fill="#475569">• Each regional compute pool is deployed independently</text>
+    <text x="250" y="0" font-size="10.5" fill="#475569">• Image service runs near compute nodes and can reuse onboarded nodes</text>
+    <text x="610" y="0" font-size="10.5" fill="#475569">• Management plane controls clusters through ports 6443 and 32761-32765</text>
+  </g>
+</svg>

@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="-apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', sans-serif">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafbfc"/>
+      <stop offset="100%" stop-color="#f0f3f7"/>
+    </linearGradient>
+    <linearGradient id="zonePub" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#fee2e2"/>
+    </linearGradient>
+    <linearGradient id="zoneDmz" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <linearGradient id="zoneMgmt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ede9fe"/>
+      <stop offset="100%" stop-color="#ddd6fe"/>
+    </linearGradient>
+    <linearGradient id="zoneCompute" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+    <filter id="cardShadow6" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f172a"/>
+    </marker>
+    <pattern id="firewall" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="4" fill="#dc2626"/>
+      <rect y="4" width="4" height="4" fill="#fff"/>
+      <rect x="4" y="4" width="4" height="4" fill="#dc2626"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg6)"/>
+
+  <text x="600" y="36" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Network Planning and Zoning</text>
+  <text x="600" y="58" text-anchor="middle" font-size="12" fill="#64748b">Network Zoning · Public -> DMZ -> Management Network -> Compute Network</text>
+
+  <!-- Public zone -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="240" height="380" rx="12" fill="url(#zonePub)" stroke="#dc2626" stroke-width="2" filter="url(#cardShadow6)"/>
+    <rect x="0" y="0" width="240" height="36" rx="12" fill="#dc2626"/>
+    <rect x="0" y="26" width="240" height="10" fill="#dc2626"/>
+    <text x="120" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="1.5">PUBLIC Zone</text>
+
+    <g transform="translate(60, 80)">
+      <circle cx="60" cy="60" r="56" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+      <ellipse cx="60" cy="60" rx="26" ry="56" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+      <line x1="4" y1="60" x2="116" y2="60" stroke="#dc2626" stroke-width="1.5"/>
+      <line x1="60" y1="4" x2="60" y2="116" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="60" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="#7f1d1d">Internet</text>
+    </g>
+
+    <g transform="translate(60, 250)">
+      <rect x="0" y="0" width="120" height="50" rx="25" fill="#1e293b"/>
+      <circle cx="30" cy="25" r="9" fill="#fff"/>
+      <path d="M 21 38 Q 30 28 39 38" stroke="#fff" stroke-width="2.5" fill="none"/>
+      <text x="70" y="30" font-size="12" font-weight="600" fill="#fff">End Users</text>
+    </g>
+
+    <text x="120" y="350" text-anchor="middle" font-size="10.5" fill="#7f1d1d" font-weight="600">Untrusted Network</text>
+  </g>
+
+  <!-- Firewall between Public and DMZ -->
+  <g transform="translate(310, 130)">
+    <rect x="0" y="0" width="16" height="340" fill="url(#firewall)"/>
+    <text x="8" y="-8" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626" transform="rotate(-90 8 -8)"></text>
+  </g>
+  <g transform="translate(296, 280)">
+    <rect x="0" y="0" width="44" height="80" rx="6" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+    <g transform="translate(13, 14)">
+      <path d="M 9 0 L 18 4 L 18 12 Q 18 18 9 22 Q 0 18 0 12 L 0 4 Z" fill="#dc2626"/>
+      <path d="M 5 11 L 8 14 L 13 8" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="22" y="56" text-anchor="middle" font-size="9" font-weight="700" fill="#7f1d1d">FW</text>
+    <text x="22" y="70" text-anchor="middle" font-size="8.5" fill="#dc2626">Firewall</text>
+  </g>
+
+  <!-- DMZ -->
+  <g transform="translate(350, 110)">
+    <rect x="0" y="0" width="220" height="380" rx="12" fill="url(#zoneDmz)" stroke="#d97706" stroke-width="2" filter="url(#cardShadow6)"/>
+    <rect x="0" y="0" width="220" height="36" rx="12" fill="#d97706"/>
+    <rect x="0" y="26" width="220" height="10" fill="#d97706"/>
+    <text x="110" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="1.5">DMZ · Access Zone</text>
+
+    <g transform="translate(30, 130)">
+      <rect x="0" y="0" width="160" height="120" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
+      <g transform="translate(60, 18)">
+        <rect x="0" y="0" width="40" height="40" rx="6" fill="#d97706"/>
+        <path d="M 8 14 L 32 14 M 8 22 L 32 22 M 8 30 L 32 30" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+      </g>
+      <text x="80" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#78350f">ELB</text>
+      <text x="80" y="94" text-anchor="middle" font-size="10.5" fill="#92400e">Load Balancing</text>
+      <text x="80" y="110" text-anchor="middle" font-size="10" fill="#475569">443 / 80 / 18090</text>
+    </g>
+
+    <g transform="translate(20, 290)">
+      <text x="90" y="0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#78350f">Inbound Rules</text>
+      <text x="90" y="18" text-anchor="middle" font-size="10" fill="#92400e">Allow Only 443/80/18090</text>
+      <text x="90" y="34" text-anchor="middle" font-size="10" fill="#92400e">Outbound to Management Network</text>
+      <text x="90" y="64" text-anchor="middle" font-size="9.5" fill="#64748b" font-style="italic">Restricted Trusted Zone</text>
+    </g>
+  </g>
+
+  <!-- Firewall between DMZ and Mgmt -->
+  <g transform="translate(580, 130)">
+    <rect x="0" y="0" width="16" height="340" fill="url(#firewall)"/>
+  </g>
+  <g transform="translate(566, 280)">
+    <rect x="0" y="0" width="44" height="80" rx="6" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+    <g transform="translate(13, 14)">
+      <path d="M 9 0 L 18 4 L 18 12 Q 18 18 9 22 Q 0 18 0 12 L 0 4 Z" fill="#dc2626"/>
+      <path d="M 5 11 L 8 14 L 13 8" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="22" y="56" text-anchor="middle" font-size="9" font-weight="700" fill="#7f1d1d">FW</text>
+    <text x="22" y="70" text-anchor="middle" font-size="8.5" fill="#dc2626">Security Group</text>
+  </g>
+
+  <!-- Management Network -->
+  <g transform="translate(620, 110)">
+    <rect x="0" y="0" width="260" height="380" rx="12" fill="url(#zoneMgmt)" stroke="#7c3aed" stroke-width="2" filter="url(#cardShadow6)"/>
+    <rect x="0" y="0" width="260" height="36" rx="12" fill="#7c3aed"/>
+    <rect x="0" y="26" width="260" height="10" fill="#7c3aed"/>
+    <text x="130" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="1.2">MGMT · Management Network</text>
+
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="220" height="80" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="1.5"/>
+      <g transform="translate(16, 20)">
+        <rect x="0" y="0" width="28" height="28" rx="5" fill="#7c3aed"/>
+        <path d="M 8 14 L 12 18 L 20 10" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="54" y="28" font-size="12" font-weight="700" fill="#3b0764">Business Nodes</text>
+      <text x="54" y="46" font-size="10.5" fill="#6d28d9">AGIOne Core Services</text>
+      <text x="54" y="64" font-size="10" fill="#64748b">>=2 Nodes · Horizontally Scalable</text>
+    </g>
+
+    <g transform="translate(20, 156)">
+      <rect x="0" y="0" width="220" height="90" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="1.5"/>
+      <g transform="translate(16, 20)">
+        <ellipse cx="14" cy="6" rx="14" ry="4" fill="#7c3aed"/>
+        <path d="M 0 6 L 0 24 Q 0 30 14 30 Q 28 30 28 24 L 28 6" fill="#7c3aed" opacity="0.85"/>
+      </g>
+      <text x="54" y="28" font-size="12" font-weight="700" fill="#3b0764">Database / Middleware</text>
+      <text x="54" y="46" font-size="10.5" fill="#6d28d9">RDS · Nacos · Redis</text>
+      <text x="54" y="60" font-size="10.5" fill="#6d28d9">Kafka · MinIO</text>
+      <text x="54" y="78" font-size="10" fill="#64748b">Internal Access Only</text>
+    </g>
+
+    <g transform="translate(20, 270)">
+      <text x="110" y="0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3b0764">Same VPC / Internal Network</text>
+      <text x="110" y="18" text-anchor="middle" font-size="10" fill="#6d28d9">Business Nodes &lt;-&gt; DB/MW</text>
+      <text x="110" y="34" text-anchor="middle" font-size="10" fill="#6d28d9">Low-Latency Communication</text>
+      <text x="110" y="64" text-anchor="middle" font-size="9.5" fill="#64748b" font-style="italic">Do Not Expose Ports Across VPCs</text>
+    </g>
+  </g>
+
+  <!-- Firewall between Mgmt and Compute -->
+  <g transform="translate(890, 130)">
+    <rect x="0" y="0" width="16" height="340" fill="url(#firewall)"/>
+  </g>
+  <g transform="translate(876, 280)">
+    <rect x="0" y="0" width="44" height="80" rx="6" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+    <g transform="translate(13, 14)">
+      <path d="M 9 0 L 18 4 L 18 12 Q 18 18 9 22 Q 0 18 0 12 L 0 4 Z" fill="#dc2626"/>
+      <path d="M 5 11 L 8 14 L 13 8" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="22" y="56" text-anchor="middle" font-size="9" font-weight="700" fill="#7f1d1d">FW</text>
+    <text x="22" y="70" text-anchor="middle" font-size="8.5" fill="#dc2626">Security Group</text>
+  </g>
+
+  <!-- Compute Network -->
+  <g transform="translate(930, 110)">
+    <rect x="0" y="0" width="210" height="380" rx="12" fill="url(#zoneCompute)" stroke="#0284c7" stroke-width="2" filter="url(#cardShadow6)"/>
+    <rect x="0" y="0" width="210" height="36" rx="12" fill="#0284c7"/>
+    <rect x="0" y="26" width="210" height="10" fill="#0284c7"/>
+    <text x="105" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="1.2">COMPUTE · Compute Network</text>
+
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="170" height="60" rx="8" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+      <g transform="translate(14, 16)">
+        <polygon points="14,2 24,8 24,18 14,24 4,18 4,8" fill="#0284c7"/>
+        <polygon points="14,2 24,8 14,14 4,8" fill="#7dd3fc"/>
+      </g>
+      <text x="52" y="24" font-size="11.5" font-weight="700" fill="#0c4a6e">K8s API</text>
+      <text x="52" y="40" font-size="10.5" fill="#0369a1">Port 6443</text>
+    </g>
+
+    <g transform="translate(20, 130)">
+      <rect x="0" y="0" width="170" height="76" rx="8" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+      <g transform="translate(14, 16)">
+        <rect x="0" y="0" width="28" height="28" rx="4" fill="#0284c7"/>
+        <path d="M 6 12 L 11 16 L 22 6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="52" y="22" font-size="11.5" font-weight="700" fill="#0c4a6e">NodePort Services</text>
+      <text x="52" y="38" font-size="10" fill="#0369a1">32761 · Monitoring</text>
+      <text x="52" y="52" font-size="10" fill="#0369a1">32762 · Model/IDE</text>
+      <text x="52" y="66" font-size="10" fill="#0369a1">32763-32765 · Reserved</text>
+    </g>
+
+    <g transform="translate(20, 216)">
+      <rect x="0" y="0" width="170" height="80" rx="8" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+      <g transform="translate(14, 16)">
+        <rect x="0" y="0" width="28" height="28" rx="4" fill="#0284c7"/>
+        <text x="14" y="20" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">GPU</text>
+      </g>
+      <text x="52" y="22" font-size="11.5" font-weight="700" fill="#0c4a6e">GPU/NPU Nodes</text>
+      <text x="52" y="40" font-size="10.5" fill="#0369a1">Compute Workloads</text>
+      <text x="14" y="70" font-size="9.5" fill="#64748b">Near-Node Gigabit+ LAN</text>
+    </g>
+
+    <g transform="translate(20, 308)">
+      <text x="85" y="0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0c4a6e">Dedicated VPC / Subnet</text>
+      <text x="85" y="18" text-anchor="middle" font-size="9.5" fill="#0369a1">Independent per Region</text>
+      <text x="85" y="34" text-anchor="middle" font-size="9.5" fill="#0369a1">VPC Peering / Dedicated Line</text>
+    </g>
+  </g>
+
+  <!-- Bottom traffic flow note -->
+  <g transform="translate(60, 520)">
+    <rect x="0" y="0" width="1080" height="100" rx="10" fill="#fff" stroke="#475569" stroke-width="1.2" filter="url(#cardShadow6)"/>
+    <text x="20" y="24" font-size="12" font-weight="700" fill="#0f172a">Key Traffic Directions</text>
+
+    <g transform="translate(20, 38)">
+      <circle cx="6" cy="6" r="3" fill="#dc2626"/>
+      <text x="18" y="10" font-size="10.5" fill="#334155">Users -> ELB</text>
+      <text x="105" y="10" font-size="10" fill="#64748b">Public HTTPS (443)</text>
+
+      <circle cx="6" cy="26" r="3" fill="#d97706"/>
+      <text x="18" y="30" font-size="10.5" fill="#334155">ELB -> Business Nodes</text>
+      <text x="125" y="30" font-size="10" fill="#64748b">Internal, Same VPC</text>
+
+      <circle cx="6" cy="46" r="3" fill="#7c3aed"/>
+      <text x="18" y="50" font-size="10.5" fill="#334155">Business Nodes &lt;-&gt; DB/MW</text>
+      <text x="165" y="50" font-size="10" fill="#64748b">Internal Low Latency</text>
+    </g>
+
+    <g transform="translate(380, 38)">
+      <circle cx="6" cy="6" r="3" fill="#0284c7"/>
+      <text x="18" y="10" font-size="10.5" fill="#334155">Business Nodes -> K8s API</text>
+      <text x="155" y="10" font-size="10" fill="#64748b">6443 (mTLS)</text>
+
+      <circle cx="6" cy="26" r="3" fill="#0284c7"/>
+      <text x="18" y="30" font-size="10.5" fill="#334155">Business Nodes -> Compute Services</text>
+      <text x="165" y="30" font-size="10" fill="#64748b">32761–32765 NodePort</text>
+
+      <circle cx="6" cy="46" r="3" fill="#16a34a"/>
+      <text x="18" y="50" font-size="10.5" fill="#334155">Business Nodes -> Internet</text>
+      <text x="155" y="50" font-size="10" fill="#64748b">Outbound, >=100 Mbps</text>
+    </g>
+
+    <g transform="translate(740, 38)">
+      <text x="0" y="10" font-size="11" font-weight="700" fill="#0f172a">Security Principles</text>
+      <text x="0" y="30" font-size="10" fill="#475569">• Firewall denies by default and allows by whitelist</text>
+      <text x="0" y="46" font-size="10" fill="#475569">• Internal components expose no public ports</text>
+      <text x="0" y="62" font-size="10" fill="#475569">• Cross-zone traffic uses NAT/VPC peering</text>
+    </g>
+  </g>
+</svg>
