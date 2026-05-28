@@ -82,6 +82,14 @@ export const enSidebar: DefaultTheme.Sidebar = {
           link: "/installation/agione-quick-install"
         },
         {
+          text: "Multi-Node Installation",
+          link: "/installation/agione-multi-node-install"
+        },
+        {
+          text: "Installation Configuration Reference",
+          link: "/installation/agione-install-config-reference"
+        },
+        {
           text: "Compute Nodes-Requirements",
           link: "/installation/deployment-requirements-for-managing-compute-nodes"
         },

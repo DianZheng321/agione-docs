@@ -45,6 +45,8 @@ export const zhSidebar: DefaultTheme.Sidebar = {
         { text: '部署综述', link: '/zh/installation/agione-deployment-requirements' },
         { text: '安装前环境预检', link: '/zh/installation/agione-precheck-environment-check' },
         { text: '环境安装部署指南', link: '/zh/installation/agione-quick-install' },
+        { text: '多节点环境安装部署', link: '/zh/installation/agione-multi-node-install' },
+        { text: '安装配置文件字段说明', link: '/zh/installation/agione-install-config-reference' },
         { text: '节点纳管-部署配置要求', link: '/zh/installation/deployment-requirements-for-managing-compute-nodes' },
         { text: '节点纳管-快速安装指南', link: '/zh/installation/quick-install-for-managing-compute-nodes' },
       ],
