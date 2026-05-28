@@ -255,6 +255,11 @@ export const zhSidebar: DefaultTheme.Sidebar = {
       collapsed: false,
       items: [
         { text: '通用问题', link: '/zh/others/faq/general' },
+        { text: '平台能力', link: '/zh/others/faq/platform' },
+        { text: '算力调度', link: '/zh/others/faq/compute' },
+        { text: '模型管理', link: '/zh/others/faq/model' },
+        { text: '推理集成', link: '/zh/others/faq/inference' },
+        { text: '运维安全', link: '/zh/others/faq/ops' },
       ],
     },
   ],
