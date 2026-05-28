@@ -26,13 +26,10 @@ The following diagram shows the overall logical architecture of the AGIOne platf
 
 ## 3. Deployment Mode Selection
 
-| Deployment Mode | Applicable Scenarios | Nodes | High Availability | Recommended Environment |
-|---|---|---|---|---|
-| PoC Deployment (All in One) | Proof of concept, feature demo, internal testing | 1 | No | Single virtual machine |
-| Production Deployment - Public Cloud SaaS | Formal production and external service delivery | Multiple nodes | Yes | Public cloud (**recommended**) |
-| Production Deployment - Private Cloud / IDC | Data compliance and internal network isolation | >=4 | Yes | Customer-owned private cloud or IDC |
-
-> **Selection recommendation**: If there are no mandatory data compliance or internal network isolation requirements, **prefer public cloud SaaS deployment** for more stable managed middleware capabilities and operational convenience.
+| Item | Description |
+| ---- | ----------- |
+| Scope | AGIOne full-stack deployment solution design, pre-sales support, PoC assessment, and production delivery |
+| Constraint Level | This document serves as a planning reference. Official delivery shall be governed by the Release Note and compatibility matrix distributed with `agione-release-v1.0-20260514.tar.gz` |
 
 ---
 
@@ -250,6 +247,19 @@ Before deployment, confirm each item to ensure a smooth rollout:
 - [ ] Operating system and kernel version meet requirements
 - [ ] Time is synchronized (NTP), and all nodes use a consistent time zone
 
+**Download URL:** [https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz](https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz)
+
+```bash
+# 1. Download and extract the bundle
+ssh root@<target>
+mkdir -p /opt/hyperone && \
+cd /opt/hyperone && \
+curl -fL -O https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz && \
+tar -zxvf agione-release-v1.0-20260514.tar.gz && \
+cd /opt/hyperone/agione-release-v1.0-20260514
+```
+
+---
 **Network**
 
 - [ ] Management nodes are located in the same VPC

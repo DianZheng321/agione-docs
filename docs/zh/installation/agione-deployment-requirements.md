@@ -57,7 +57,10 @@ AGIOne 平台部署在逻辑上分为两个相对独立的部分：
 
 ![PoC All in One 架构](images/02-poc-aio.svg)
 
-### 4.3 部署说明
+| 项目   | 说明                                                                                                                                                                                                                             |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 适用范围 | AGIOne 全栈部署方案设计、售前支持、PoC 评估、生产交付                                                                                                                                                                                               |
+| 约束级别 | 本文档为规划参考，正式交付应以 `agione-release-v1.0-20260514.tar.gz` 配套的 Release Note 与兼容矩阵为准                                                                                                                                                  |
 
 - 业务服务、数据库、中间件全部部署在同一节点上。
 - 默认通过 HTTP 端口 `18090` 对外提供服务。
@@ -310,6 +313,19 @@ AGIOne 平台部署在逻辑上分为两个相对独立的部分：
 
 ---
 
+**下载地址：** [https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz](https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz)
+
+```bash
+# 1. 下载并解压 bundle
+ssh root@<target>
+mkdir -p /opt/hyperone && \
+cd /opt/hyperone && \
+curl -fL -O https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz && \
+tar -zxvf agione-release-v1.0-20260514.tar.gz && \
+cd /opt/hyperone/agione-release-v1.0-20260514
+```
+
+---
 ## 11. 附录
 
 ### 11.1 资源规格速查
