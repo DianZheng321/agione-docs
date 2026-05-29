@@ -9,7 +9,13 @@ next: true
 
 ## 文档清单
 
+<!--
 | 文档 | 用途 |
 |------|------|
 | [在线支付与激活](./online-payment-activation) | 通过在线支付完成购买并激活平台许可证 |
+| [激活码与激活](./activation-code-activation) | 使用预发放激活码完成平台激活 |
+-->
+
+| 文档 | 用途 |
+|------|------|
 | [激活码与激活](./activation-code-activation) | 使用预发放激活码完成平台激活 |
