@@ -6,7 +6,7 @@ export const enNavbar = [
     items: [
       { text: "Installation", link: '/installation/' },
       { text: "Purchase & Activation", link: "/license/" },
-      { text: "User Guide", link: "/userguide/" },
+      // { text: "User Guide", link: "/userguide/" }, // [Hidden] content not yet online
       { text: "User Manual", link: "/usermanual/" },
       {
         text: "Best Practices",
@@ -15,13 +15,13 @@ export const enNavbar = [
           { text: "Project Practices", link: "/practices/project/" },
         ]
       },
-      {
-        text: "Operations",
-        items: [
-          { text: "Admin Portal Manual", link: "/operations/admin-portal-manual/" },
-          { text: "OM Guide", link: "/operations/om-guide/" },
-        ],
-      },
+      // {
+      //   text: "Operations",
+      //   items: [
+      //     { text: "Admin Portal Manual", link: "/operations/admin-portal-manual/" },
+      //     { text: "OM Guide", link: "/operations/om-guide/" },
+      //   ],
+      // }, // [Hidden] Admin Portal Manual + O&M Guide - content not yet online
       // { text: "Tools", link: "/tools/" },
       {
         text: "Others",

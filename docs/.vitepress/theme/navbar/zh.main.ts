@@ -6,7 +6,7 @@ export const zhNavbar = [
     items: [
       { text: '安装部署', link: '/zh/installation/' },
       { text: '购买与激活', link: '/zh/license/' },
-      { text: '用户指南', link: '/zh/userguide/' },
+      // { text: '用户指南', link: '/zh/userguide/' }, // [隐藏] 内容暂未上线
       { text: '用户手册', link: '/zh/usermanual/' },
       {
         text: '最佳实践',
@@ -15,13 +15,13 @@ export const zhNavbar = [
           { text: '项目实践', link: '/zh/practices/project/' },
         ]
       },
-      {
-        text: '运维',
-        items: [
-          { text: '管理门户手册', link: '/zh/operations/admin-portal-manual/' },
-          { text: '运维指南', link: '/zh/operations/om-guide/' },
-        ],
-      },
+      // {
+      //   text: '运维',
+      //   items: [
+      //     { text: '管理门户手册', link: '/zh/operations/admin-portal-manual/' },
+      //     { text: '运维指南', link: '/zh/operations/om-guide/' },
+      //   ],
+      // }, // [隐藏] 管理门户手册+运维指南 - 内容暂未上线
       {
         text: '其他',
         items: [

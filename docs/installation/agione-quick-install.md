@@ -24,9 +24,9 @@ Recommended request profile:
 
 ### 1. Download bundle
 
-Download `agione-release-v1.0-20260514.tar.gz` on the target host:
+Download `agione-release-v1.0-20260527.tar.gz` on the target host:
 
-**Download URL:** [https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz](https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz)
+**Download URL:** [https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260527.tar.gz](https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260527.tar.gz)
 
 Example:
 
@@ -34,9 +34,9 @@ Example:
 ssh root@<target-host>
 mkdir -p /opt/hyperone && \
 cd /opt/hyperone && \
-curl -fL -O https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260514.tar.gz && \
-tar -zxvf agione-release-v1.0-20260514.tar.gz && \
-cd /opt/hyperone/agione-release-v1.0-20260514
+curl -fL -O https://onepro-agione.oss-ap-southeast-1.aliyuncs.com/modelone/release/agione-release-v1.0-20260527.tar.gz && \
+tar -zxvf agione-release-v1.0-20260527.tar.gz && \
+cd /opt/hyperone/agione-release-v1.0-20260527
 ```
 
 ### 2. One-click installation
@@ -63,17 +63,21 @@ The installer automatically performs:
 
 ### 3. View installation result
 
-After installation succeeds, `quick` prints the actual access entry and default account information at the end of the terminal output. `quick` uses English output by default, in the following format:
+After installation succeeds, `quick` prints the actual access entry and default account information at the end of the terminal output. The default console account passwords are generated during each installation unless fixed credentials are explicitly configured in `agione_app.default_access.credentials`.
+
+`quick` uses English output by default, in the following format:
 
 ```text
 Installation Result:
 Console URL: http://<target-host-ip>:18090/
 
 Access Information (Account/Password):
-admin .system.admin.123./
-operator .system.admin.123./
-manager .system.admin.123./
+admin <generated-random-password>
+operator <generated-random-password>
+provider <generated-random-password>
 ```
+
+The same access information is written to `outputs/final-install-result.md` and `outputs/acceptance-report.md` under the installer runtime directory. The installation report also lists the path to the default console account file. Archive these files according to the customer-approved credential handover process.
 
 You can also run:
 
@@ -371,7 +375,7 @@ At minimum, hand over:
 
 ```bash
 # 1. Enter the bundle directory
-cd /opt/hyperone/agione-release-v1.0-20260514
+cd /opt/hyperone/agione-release-v1.0-20260527
 
 # 2. Grant execute permission to the entry script
 chmod +x ./agione

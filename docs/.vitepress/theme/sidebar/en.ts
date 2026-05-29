@@ -25,6 +25,13 @@ export const enSidebar: DefaultTheme.Sidebar = {
       ]
     },
     {
+      text: "Role System",
+      collapsed: false,
+      items: [
+        { text: "Role Comparison", link: "/product/role-comparison" },
+      ],
+    },
+    {
       text: "Compatibility & Limitations",
       collapsed: false,
       items: [
@@ -63,7 +70,7 @@ export const enSidebar: DefaultTheme.Sidebar = {
       collapsed: false,
       items: [
         {
-          text: "Requirements",
+          text: "Overview",
           link: "/installation/agione-deployment-requirements"
         },
         {
@@ -73,6 +80,14 @@ export const enSidebar: DefaultTheme.Sidebar = {
         {
           text: "Installation & Deployment",
           link: "/installation/agione-quick-install"
+        },
+        {
+          text: "Multi-Node Installation",
+          link: "/installation/agione-multi-node-install"
+        },
+        {
+          text: "Installation Configuration Reference",
+          link: "/installation/agione-install-config-reference"
         },
         {
           text: "Compute Nodes-Requirements",
@@ -90,10 +105,7 @@ export const enSidebar: DefaultTheme.Sidebar = {
       text: "Purchase & Activation",
       collapsed: false,
       items: [
-        {
-          text: "Online Payment & Activation",
-          link: "/license/online-payment-activation"
-        },
+        // { text: "Online Payment & Activation", link: "/license/online-payment-activation" }, // [Hidden] content not yet online
         {
           text: "Activation Code & Activation",
           link: "/license/activation-code-activation"
@@ -296,9 +308,12 @@ export const enSidebar: DefaultTheme.Sidebar = {
       text: "FAQ",
       collapsed: false,
       items: [
-        {
-          text: "General FAQ", link: "/others/faq/general",
-        }
+          { text: "General", link: "/others/faq/general" },
+          { text: "Platform", link: "/others/faq/platform" },
+          { text: "Compute", link: "/others/faq/compute" },
+          { text: "Models", link: "/others/faq/model" },
+          { text: "Inference", link: "/others/faq/inference" },
+          { text: "Ops & Security", link: "/others/faq/ops" },
       ]
     }
   ],
