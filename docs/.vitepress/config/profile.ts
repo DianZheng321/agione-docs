@@ -18,7 +18,7 @@ const publicProfile: DocsProfile = {
   DOCS_OPENCODE_URL_EN: 'https://agione.pro/docs/best-practice/integration/OpenCode.html',
   DOCS_OPENCODE_URL_ZH: 'https://agione.cc/docs/best-practice/integration/OpenCode.html',
   DOCS_RELEASE_PAGE_URL_EN: 'https://agione.pro/release/download/agione-release-latest',
-  DOCS_RELEASE_PAGE_URL_ZH: 'https://agione.cc/release/download/agione-release-latest',
+  DOCS_RELEASE_PAGE_URL_ZH: 'https://agione.pro/release/download/agione-release-latest',
   DOCS_PROVIDER_EXAMPLE: 'AGIOneSystem',
   DOCS_CLOUD_PLATFORM_EN: 'AGIOne-powerone',
   DOCS_CLOUD_PLATFORM_ZH: 'AGIOne-powerone',
