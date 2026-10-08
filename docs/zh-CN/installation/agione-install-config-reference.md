@@ -93,25 +93,25 @@ next: true
 
 ```yaml
 global_config:
-  deploy_mode: single
-  language: en_US
-  offline_mode: true
+  deploy_mode: single # [!code info]
+  language: en_US # [!code info]
+  offline_mode: true # [!code warning]
 
-selected_modules:
+selected_modules: # [!code info]
   - agione-app
 
 agione_app:
-  node_mode: all-in-one
+  node_mode: all-in-one # [!code info]
   db:
-    root_password: "DbRoot_2026"
+    root_password: "DbRoot_2026" # [!code error]
   redis:
-    password: "Redis_2026"
+    password: "Redis_2026" # [!code error]
   nacos:
-    password: "Nacos_2026"
-    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw=="
+    password: "Nacos_2026" # [!code error]
+    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw==" # [!code error]
   default_access:
-    generate_random_passwords: true
-    password_length: 20
+    generate_random_passwords: true # [!code info]
+    password_length: 20 # [!code info]
 ```
 
 > <span style="color:#b42318;font-weight:700">需要修改</span>：数据库 / Redis / Nacos / MinIO 密码，以及任何固定域名、证书或默认账号密码；如果补充连接地址，也要替换为目标环境地址。<br><span style="color:#b54708;font-weight:700">按需修改</span>：`global_config.offline_mode`、`agione_app.frontend` 和 `default_access`。<br><span style="color:#027a48;font-weight:700">通常保持</span>：`deploy_mode`、`selected_modules`、`node_mode` 及服务默认端口。
@@ -124,58 +124,58 @@ agione_app:
 
 ```yaml
 global_config:
-  deploy_mode: host-mode
-  language: en_US
-  offline_mode: true
+  deploy_mode: host-mode # [!code info]
+  language: en_US # [!code info]
+  offline_mode: true # [!code warning]
 
-selected_modules:
+selected_modules: # [!code info]
   - agione-app
 
 agione_app:
-  node_mode: host-mode
+  node_mode: host-mode # [!code info]
   topology:
-    ssh_user: root
-    ssh_port: 22
-    ssh_password: "Ssh_2026"
-    app_nodes:
-      - 192.168.31.204
-      - 192.168.31.207
-    middleware_node: 192.168.31.208
-    backup_nodes:
-      - 192.168.31.209
+    ssh_user: root # [!code error]
+    ssh_port: 22 # [!code warning]
+    ssh_password: "Ssh_2026" # [!code error]
+    app_nodes: # [!code error]
+      - 192.168.31.204 # [!code error]
+      - 192.168.31.207 # [!code error]
+    middleware_node: 192.168.31.208 # [!code error]
+    backup_nodes: # [!code error]
+      - 192.168.31.209 # [!code error]
   db:
-    host: 192.168.31.208
-    port: 3306
-    root_username: root
-    root_password: "DbRoot_2026"
+    host: 192.168.31.208 # [!code error]
+    port: 3306 # [!code info]
+    root_username: root # [!code error]
+    root_password: "DbRoot_2026" # [!code error]
   redis:
-    host: 192.168.31.208
-    port: 6379
-    password: "Redis_2026"
+    host: 192.168.31.208 # [!code error]
+    port: 6379 # [!code info]
+    password: "Redis_2026" # [!code error]
   nacos:
-    host: 192.168.31.208
-    port: 8848
-    namespace: agione-prod
-    username: nacos
-    password: "Nacos_2026"
-    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw=="
+    host: 192.168.31.208 # [!code error]
+    port: 8848 # [!code info]
+    namespace: agione-prod # [!code info]
+    username: nacos # [!code error]
+    password: "Nacos_2026" # [!code error]
+    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw==" # [!code error]
   kafka:
-    host: 192.168.31.208
-    port: 9092
-    bootstrap_servers: 192.168.31.208:9092
-    security_protocol: PLAINTEXT
-    auto_create_topics: true
+    host: 192.168.31.208 # [!code error]
+    port: 9092 # [!code info]
+    bootstrap_servers: 192.168.31.208:9092 # [!code error]
+    security_protocol: PLAINTEXT # [!code info]
+    auto_create_topics: true # [!code info]
   minio:
-    endpoint: http://192.168.31.208:9000
-    api_direct_host: 192.168.31.208:9000
-    web_direct_host: 192.168.31.208:9001
-    access_key: "MinioAccess_2026"
-    secret_key: "MinioSecret_2026"
-  auto_initialize_db_replication: true
-  accept_standby_rebuild_risk: true
+    endpoint: http://192.168.31.208:9000 # [!code error]
+    api_direct_host: 192.168.31.208:9000 # [!code error]
+    web_direct_host: 192.168.31.208:9001 # [!code error]
+    access_key: "MinioAccess_2026" # [!code error]
+    secret_key: "MinioSecret_2026" # [!code error]
+  auto_initialize_db_replication: true # [!code warning]
+  accept_standby_rebuild_risk: true # [!code warning]
   default_access:
-    generate_random_passwords: true
-    password_length: 20
+    generate_random_passwords: true # [!code info]
+    password_length: 20 # [!code info]
 ```
 
 > <span style="color:#b42318;font-weight:700">需要修改</span>：`topology.app_nodes`、`middleware_node`、`backup_nodes`、`ssh_user`、`ssh_port`、`ssh_password`，以及所有数据库、中间件和对象存储的地址、账号、密码。<br><span style="color:#b54708;font-weight:700">按需修改</span>：`auto_initialize_db_replication` 和 `accept_standby_rebuild_risk`；只有确认备库初始化或重建风险后才调整。<br><span style="color:#027a48;font-weight:700">通常保持</span>：`deploy_mode`、`selected_modules`、`node_mode`、`security_protocol` 和 `default_access`。
@@ -190,57 +190,57 @@ agione_app:
 
 ```yaml
 global_config:
-  deploy_mode: host-mode
-  language: en_US
-  offline_mode: true
+  deploy_mode: host-mode # [!code info]
+  language: en_US # [!code info]
+  offline_mode: true # [!code warning]
 
-selected_modules:
+selected_modules: # [!code info]
   - agione-app
 
 agione_app:
-  node_mode: host-mode
+  node_mode: host-mode # [!code info]
   topology:
-    ssh_user: root
-    ssh_port: 22
-    app_nodes:
-      - 192.168.31.204
-      - 192.168.31.207
+    ssh_user: root # [!code warning]
+    ssh_port: 22 # [!code warning]
+    app_nodes: # [!code error]
+      - 192.168.31.204 # [!code error]
+      - 192.168.31.207 # [!code error]
   middleware:
-    mode: managed-middleware
-    provider: generic
-    verify_connectivity: true
+    mode: managed-middleware # [!code info]
+    provider: generic # [!code warning]
+    verify_connectivity: true # [!code info]
   db:
-    host: rds-mariadb.internal.example.com
-    port: 3306
-    root_username: root
-    root_password: "DbRoot_2026"
-    ssl: false
+    host: rds-mariadb.internal.example.com # [!code error]
+    port: 3306 # [!code warning]
+    root_username: root # [!code error]
+    root_password: "DbRoot_2026" # [!code error]
+    ssl: false # [!code warning]
   redis:
-    host: redis.internal.example.com
-    port: 6379
-    password: "Redis_2026"
-    ssl: false
+    host: redis.internal.example.com # [!code error]
+    port: 6379 # [!code warning]
+    password: "Redis_2026" # [!code error]
+    ssl: false # [!code warning]
   nacos:
-    host: nacos.internal.example.com
-    port: 8848
-    namespace: agione-prod
-    username: nacos
-    password: "Nacos_2026"
-    assume_preimported_configs: false
+    host: nacos.internal.example.com # [!code error]
+    port: 8848 # [!code warning]
+    namespace: agione-prod # [!code warning]
+    username: nacos # [!code error]
+    password: "Nacos_2026" # [!code error]
+    assume_preimported_configs: false # [!code info]
   kafka:
-    bootstrap_servers: kafka-1.internal.example.com:9092
-    security_protocol: PLAINTEXT
-    auto_create_topics: true
+    bootstrap_servers: kafka-1.internal.example.com:9092 # [!code error]
+    security_protocol: PLAINTEXT # [!code info]
+    auto_create_topics: true # [!code info]
   minio:
-    storage_type: s3
-    endpoint: https://oss.internal.example.com
-    access_key: "ObjectAccess_2026"
-    secret_key: "ObjectSecret_2026"
-    bucket_name: agione
-    path_style_access: true
+    storage_type: s3 # [!code warning]
+    endpoint: https://oss.internal.example.com # [!code error]
+    access_key: "ObjectAccess_2026" # [!code error]
+    secret_key: "ObjectSecret_2026" # [!code error]
+    bucket_name: agione # [!code error]
+    path_style_access: true # [!code warning]
   default_access:
-    generate_random_passwords: true
-    password_length: 20
+    generate_random_passwords: true # [!code info]
+    password_length: 20 # [!code info]
 ```
 
 > <span style="color:#b42318;font-weight:700">需要修改</span>：`topology.app_nodes`、托管数据库 / Redis / Nacos / Kafka / 对象存储的地址、端口、账号、密码、Bucket 和访问方式。<br><span style="color:#b54708;font-weight:700">按需修改</span>：`provider`、`ssl`、`security_protocol`、`path_style_access` 及命名空间等托管服务参数，并以兼容矩阵为准。<br><span style="color:#027a48;font-weight:700">通常保持</span>：`deploy_mode`、`selected_modules`、`node_mode`、`verify_connectivity` 和 `default_access`。
