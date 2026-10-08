@@ -93,25 +93,25 @@ Use this when one machine runs AGIOne application services and self-managed midd
 
 ```yaml
 global_config:
-  deploy_mode: single
-  language: en_US
-  offline_mode: true
+  deploy_mode: single # [!code info]
+  language: en_US # [!code info]
+  offline_mode: true # [!code warning]
 
-selected_modules:
+selected_modules: # [!code info]
   - agione-app
 
 agione_app:
-  node_mode: all-in-one
+  node_mode: all-in-one # [!code info]
   db:
-    root_password: "DbRoot_2026"
+    root_password: "DbRoot_2026" # [!code error]
   redis:
-    password: "Redis_2026"
+    password: "Redis_2026" # [!code error]
   nacos:
-    password: "Nacos_2026"
-    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw=="
+    password: "Nacos_2026" # [!code error]
+    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw==" # [!code error]
   default_access:
-    generate_random_passwords: true
-    password_length: 20
+    generate_random_passwords: true # [!code info]
+    password_length: 20 # [!code info]
 ```
 
 > <span style="color:#b42318;font-weight:700">Change</span>: database / Redis / Nacos / MinIO passwords, and any fixed domain, certificate, or default account password; if connection addresses are added, replace them with target-environment addresses. <br><span style="color:#b54708;font-weight:700">Adjust when needed</span>: `global_config.offline_mode`, `agione_app.frontend`, and `default_access`. <br><span style="color:#027a48;font-weight:700">Usually keep</span>: `deploy_mode`, `selected_modules`, `node_mode`, and default service ports.
@@ -124,58 +124,58 @@ Use this for the default 4 to 8 machine host-mode deployment where the installer
 
 ```yaml
 global_config:
-  deploy_mode: host-mode
-  language: en_US
-  offline_mode: true
+  deploy_mode: host-mode # [!code info]
+  language: en_US # [!code info]
+  offline_mode: true # [!code warning]
 
-selected_modules:
+selected_modules: # [!code info]
   - agione-app
 
 agione_app:
-  node_mode: host-mode
+  node_mode: host-mode # [!code info]
   topology:
-    ssh_user: root
-    ssh_port: 22
-    ssh_password: "Ssh_2026"
-    app_nodes:
-      - 192.168.31.204
-      - 192.168.31.207
-    middleware_node: 192.168.31.208
-    backup_nodes:
-      - 192.168.31.209
+    ssh_user: root # [!code error]
+    ssh_port: 22 # [!code warning]
+    ssh_password: "Ssh_2026" # [!code error]
+    app_nodes: # [!code error]
+      - 192.168.31.204 # [!code error]
+      - 192.168.31.207 # [!code error]
+    middleware_node: 192.168.31.208 # [!code error]
+    backup_nodes: # [!code error]
+      - 192.168.31.209 # [!code error]
   db:
-    host: 192.168.31.208
-    port: 3306
-    root_username: root
-    root_password: "DbRoot_2026"
+    host: 192.168.31.208 # [!code error]
+    port: 3306 # [!code info]
+    root_username: root # [!code error]
+    root_password: "DbRoot_2026" # [!code error]
   redis:
-    host: 192.168.31.208
-    port: 6379
-    password: "Redis_2026"
+    host: 192.168.31.208 # [!code error]
+    port: 6379 # [!code info]
+    password: "Redis_2026" # [!code error]
   nacos:
-    host: 192.168.31.208
-    port: 8848
-    namespace: agione-prod
-    username: nacos
-    password: "Nacos_2026"
-    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw=="
+    host: 192.168.31.208 # [!code error]
+    port: 8848 # [!code info]
+    namespace: agione-prod # [!code info]
+    username: nacos # [!code error]
+    password: "Nacos_2026" # [!code error]
+    auth_token: "QWdJT25lX05hY29zX0F1dGhUb2tlbl8yMDI2X1BsZWFzZVJlcGxhY2VfNDhCeXRlcw==" # [!code error]
   kafka:
-    host: 192.168.31.208
-    port: 9092
-    bootstrap_servers: 192.168.31.208:9092
-    security_protocol: PLAINTEXT
-    auto_create_topics: true
+    host: 192.168.31.208 # [!code error]
+    port: 9092 # [!code info]
+    bootstrap_servers: 192.168.31.208:9092 # [!code error]
+    security_protocol: PLAINTEXT # [!code info]
+    auto_create_topics: true # [!code info]
   minio:
-    endpoint: http://192.168.31.208:9000
-    api_direct_host: 192.168.31.208:9000
-    web_direct_host: 192.168.31.208:9001
-    access_key: "MinioAccess_2026"
-    secret_key: "MinioSecret_2026"
-  auto_initialize_db_replication: true
-  accept_standby_rebuild_risk: true
+    endpoint: http://192.168.31.208:9000 # [!code error]
+    api_direct_host: 192.168.31.208:9000 # [!code error]
+    web_direct_host: 192.168.31.208:9001 # [!code error]
+    access_key: "MinioAccess_2026" # [!code error]
+    secret_key: "MinioSecret_2026" # [!code error]
+  auto_initialize_db_replication: true # [!code warning]
+  accept_standby_rebuild_risk: true # [!code warning]
   default_access:
-    generate_random_passwords: true
-    password_length: 20
+    generate_random_passwords: true # [!code info]
+    password_length: 20 # [!code info]
 ```
 
 > <span style="color:#b42318;font-weight:700">Change</span>: `topology.app_nodes`, `middleware_node`, `backup_nodes`, `ssh_user`, `ssh_port`, `ssh_password`, and all database, middleware, and object-storage addresses, accounts, and passwords. <br><span style="color:#b54708;font-weight:700">Adjust when needed</span>: `auto_initialize_db_replication` and `accept_standby_rebuild_risk`; change them only after confirming standby initialization or rebuild risk. <br><span style="color:#027a48;font-weight:700">Usually keep</span>: `deploy_mode`, `selected_modules`, `node_mode`, `security_protocol`, and `default_access`.
@@ -190,57 +190,57 @@ Use this when database, Redis, Nacos, Kafka, and object storage are provided by 
 
 ```yaml
 global_config:
-  deploy_mode: host-mode
-  language: en_US
-  offline_mode: true
+  deploy_mode: host-mode # [!code info]
+  language: en_US # [!code info]
+  offline_mode: true # [!code warning]
 
-selected_modules:
+selected_modules: # [!code info]
   - agione-app
 
 agione_app:
-  node_mode: host-mode
+  node_mode: host-mode # [!code info]
   topology:
-    ssh_user: root
-    ssh_port: 22
-    app_nodes:
-      - 192.168.31.204
-      - 192.168.31.207
+    ssh_user: root # [!code warning]
+    ssh_port: 22 # [!code warning]
+    app_nodes: # [!code error]
+      - 192.168.31.204 # [!code error]
+      - 192.168.31.207 # [!code error]
   middleware:
-    mode: managed-middleware
-    provider: generic
-    verify_connectivity: true
+    mode: managed-middleware # [!code info]
+    provider: generic # [!code warning]
+    verify_connectivity: true # [!code info]
   db:
-    host: rds-mariadb.internal.example.com
-    port: 3306
-    root_username: root
-    root_password: "DbRoot_2026"
-    ssl: false
+    host: rds-mariadb.internal.example.com # [!code error]
+    port: 3306 # [!code warning]
+    root_username: root # [!code error]
+    root_password: "DbRoot_2026" # [!code error]
+    ssl: false # [!code warning]
   redis:
-    host: redis.internal.example.com
-    port: 6379
-    password: "Redis_2026"
-    ssl: false
+    host: redis.internal.example.com # [!code error]
+    port: 6379 # [!code warning]
+    password: "Redis_2026" # [!code error]
+    ssl: false # [!code warning]
   nacos:
-    host: nacos.internal.example.com
-    port: 8848
-    namespace: agione-prod
-    username: nacos
-    password: "Nacos_2026"
-    assume_preimported_configs: false
+    host: nacos.internal.example.com # [!code error]
+    port: 8848 # [!code warning]
+    namespace: agione-prod # [!code warning]
+    username: nacos # [!code error]
+    password: "Nacos_2026" # [!code error]
+    assume_preimported_configs: false # [!code info]
   kafka:
-    bootstrap_servers: kafka-1.internal.example.com:9092
-    security_protocol: PLAINTEXT
-    auto_create_topics: true
+    bootstrap_servers: kafka-1.internal.example.com:9092 # [!code error]
+    security_protocol: PLAINTEXT # [!code info]
+    auto_create_topics: true # [!code info]
   minio:
-    storage_type: s3
-    endpoint: https://oss.internal.example.com
-    access_key: "ObjectAccess_2026"
-    secret_key: "ObjectSecret_2026"
-    bucket_name: agione
-    path_style_access: true
+    storage_type: s3 # [!code warning]
+    endpoint: https://oss.internal.example.com # [!code error]
+    access_key: "ObjectAccess_2026" # [!code error]
+    secret_key: "ObjectSecret_2026" # [!code error]
+    bucket_name: agione # [!code error]
+    path_style_access: true # [!code warning]
   default_access:
-    generate_random_passwords: true
-    password_length: 20
+    generate_random_passwords: true # [!code info]
+    password_length: 20 # [!code info]
 ```
 
 > <span style="color:#b42318;font-weight:700">Change</span>: `topology.app_nodes`, the managed database / Redis / Nacos / Kafka / object-storage addresses, ports, accounts, passwords, bucket, and access mode. <br><span style="color:#b54708;font-weight:700">Adjust when needed</span>: `provider`, `ssl`, `security_protocol`, `path_style_access`, and namespace or other managed-service parameters, following the compatibility matrix. <br><span style="color:#027a48;font-weight:700">Usually keep</span>: `deploy_mode`, `selected_modules`, `node_mode`, `verify_connectivity`, and `default_access`.
