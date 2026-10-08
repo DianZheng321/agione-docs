@@ -85,6 +85,8 @@ Recommended writing order:
 
 The password values below only demonstrate the safe character format. For production delivery, generate different passwords for each component and use only `A-Z`, `a-z`, `0-9`, and `_`.
 
+> <span style="color:#b42318;font-weight:700">Red: must be changed for the target environment</span>; <span style="color:#b54708;font-weight:700">orange: choose or adjust for the deployment plan</span>; <span style="color:#027a48;font-weight:700">green: usually keep the example value</span>. Example IPs, hostnames, ports, accounts, passwords, buckets, and certificate-related fields must not be used directly in production.
+
 ### 2.1 Single-Node Minimal Config
 
 Use this when one machine runs AGIOne application services and self-managed middleware.
@@ -112,6 +114,8 @@ agione_app:
     password_length: 20
 ```
 
+> <span style="color:#b42318;font-weight:700">Change</span>: database / Redis / Nacos / MinIO passwords, and any fixed domain, certificate, or default account password; if connection addresses are added, replace them with target-environment addresses. <br><span style="color:#b54708;font-weight:700">Adjust when needed</span>: `global_config.offline_mode`, `agione_app.frontend`, and `default_access`. <br><span style="color:#027a48;font-weight:700">Usually keep</span>: `deploy_mode`, `selected_modules`, `node_mode`, and default service ports.
+
 If no fixed domain, certificate, or fixed default account password is required, a single-node installation usually needs no more fields.
 
 ### 2.2 Multi-Node Self-Managed Minimal Config
@@ -132,6 +136,7 @@ agione_app:
   topology:
     ssh_user: root
     ssh_port: 22
+    ssh_password: "Ssh_2026"
     app_nodes:
       - 192.168.31.204
       - 192.168.31.207
@@ -172,6 +177,8 @@ agione_app:
     generate_random_passwords: true
     password_length: 20
 ```
+
+> <span style="color:#b42318;font-weight:700">Change</span>: `topology.app_nodes`, `middleware_node`, `backup_nodes`, `ssh_user`, `ssh_port`, `ssh_password`, and all database, middleware, and object-storage addresses, accounts, and passwords. <br><span style="color:#b54708;font-weight:700">Adjust when needed</span>: `auto_initialize_db_replication` and `accept_standby_rebuild_risk`; change them only after confirming standby initialization or rebuild risk. <br><span style="color:#027a48;font-weight:700">Usually keep</span>: `deploy_mode`, `selected_modules`, `node_mode`, `security_protocol`, and `default_access`.
 
 If nodes use different SSH users, ports, or passwords, add `topology.ssh_credentials`; see [3.2 Host-mode node topology](#_3-2-host-mode-node-topology).
 
@@ -236,7 +243,7 @@ agione_app:
     password_length: 20
 ```
 
-Set `agione_app.nacos.assume_preimported_configs: true` only when all required AGIOne configuration items already exist in the target Nacos namespace.
+> <span style="color:#b42318;font-weight:700">Change</span>: `topology.app_nodes`, the managed database / Redis / Nacos / Kafka / object-storage addresses, ports, accounts, passwords, bucket, and access mode. <br><span style="color:#b54708;font-weight:700">Adjust when needed</span>: `provider`, `ssl`, `security_protocol`, `path_style_access`, and namespace or other managed-service parameters, following the compatibility matrix. <br><span style="color:#027a48;font-weight:700">Usually keep</span>: `deploy_mode`, `selected_modules`, `node_mode`, `verify_connectivity`, and `default_access`.
 
 ## 3. Level 1: Required Fields
 
