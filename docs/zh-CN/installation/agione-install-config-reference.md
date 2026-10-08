@@ -85,6 +85,8 @@ next: true
 
 下面的密码只演示安全字符格式。生产交付请为每个组件生成不同密码，并只使用 `A-Z`、`a-z`、`0-9`、`_`。
 
+> <span style="color:#b42318;font-weight:700">红色：必须按目标环境修改</span>；<span style="color:#b54708;font-weight:700">橙色：按实际方案选择或调整</span>；<span style="color:#027a48;font-weight:700">绿色：通常保持示例值</span>。示例中的 IP、域名、端口、账号、密码、Bucket 和证书相关字段不能直接用于生产环境。
+
 ### 2.1 单节点最小配置
 
 一台机器同时运行 AGIOne 应用服务和自建中间件时使用。
@@ -112,6 +114,8 @@ agione_app:
     password_length: 20
 ```
 
+> <span style="color:#b42318;font-weight:700">需要修改</span>：数据库 / Redis / Nacos / MinIO 密码，以及任何固定域名、证书或默认账号密码；如果补充连接地址，也要替换为目标环境地址。<br><span style="color:#b54708;font-weight:700">按需修改</span>：`global_config.offline_mode`、`agione_app.frontend` 和 `default_access`。<br><span style="color:#027a48;font-weight:700">通常保持</span>：`deploy_mode`、`selected_modules`、`node_mode` 及服务默认端口。
+
 如果没有固定域名、证书或固定默认账号密码，单节点安装通常不需要更多字段。
 
 ### 2.2 多节点自建中间件最小配置
@@ -132,6 +136,7 @@ agione_app:
   topology:
     ssh_user: root
     ssh_port: 22
+    ssh_password: "Ssh_2026"
     app_nodes:
       - 192.168.31.204
       - 192.168.31.207
@@ -172,6 +177,8 @@ agione_app:
     generate_random_passwords: true
     password_length: 20
 ```
+
+> <span style="color:#b42318;font-weight:700">需要修改</span>：`topology.app_nodes`、`middleware_node`、`backup_nodes`、`ssh_user`、`ssh_port`、`ssh_password`，以及所有数据库、中间件和对象存储的地址、账号、密码。<br><span style="color:#b54708;font-weight:700">按需修改</span>：`auto_initialize_db_replication` 和 `accept_standby_rebuild_risk`；只有确认备库初始化或重建风险后才调整。<br><span style="color:#027a48;font-weight:700">通常保持</span>：`deploy_mode`、`selected_modules`、`node_mode`、`security_protocol` 和 `default_access`。
 
 如果每台机器 SSH 用户、端口或密码不同，增加 `topology.ssh_credentials`；见 [3.2 host-mode 节点拓扑](#_3-2-host-mode-节点拓扑)。
 
@@ -236,7 +243,7 @@ agione_app:
     password_length: 20
 ```
 
-只有当目标 Nacos 命名空间已提前导入全部 AGIOne 配置时，才设置 `agione_app.nacos.assume_preimported_configs: true`。
+> <span style="color:#b42318;font-weight:700">需要修改</span>：`topology.app_nodes`、托管数据库 / Redis / Nacos / Kafka / 对象存储的地址、端口、账号、密码、Bucket 和访问方式。<br><span style="color:#b54708;font-weight:700">按需修改</span>：`provider`、`ssl`、`security_protocol`、`path_style_access` 及命名空间等托管服务参数，并以兼容矩阵为准。<br><span style="color:#027a48;font-weight:700">通常保持</span>：`deploy_mode`、`selected_modules`、`node_mode`、`verify_connectivity` 和 `default_access`。
 
 ## 3. 第一级：必填字段
 
