@@ -124,6 +124,13 @@ export const enSidebar: DefaultTheme.Sidebar = {
             },
           ],
         },
+        {
+          text: "ClusterD",
+          collapsed: false,
+          items: [
+            { text: "Installation, Upgrade & Uninstallation", link: "/installation/clusterd/" },
+          ],
+        },
       ],
     }
   ],

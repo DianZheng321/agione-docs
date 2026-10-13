@@ -61,6 +61,13 @@ export const zhSidebar: DefaultTheme.Sidebar = {
             { text: '企业自用版部署后配置', link: '/zh-CN/installation/post-deployment/enterprise-internal-edition' },
           ],
         },
+        {
+          text: 'ClusterD',
+          collapsed: false,
+          items: [
+            { text: '安装、升级与卸载', link: '/zh-CN/installation/clusterd/' },
+          ],
+        },
       ],
     },
   ],
