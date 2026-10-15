@@ -916,6 +916,13 @@ export const enSidebar: DefaultTheme.Sidebar = {
           ]
         },
         {
+          text: "Protocol Compatibility",
+          collapsed: false,
+          items: [
+            { text: "Doubao Compatible Proxy API", link: "/practices/protocol-compatibility/doubao/" },
+          ],
+        },
+        {
           text: "Project Practices",
           collapsed: false,
           items: [

@@ -856,6 +856,13 @@ export const zhSidebar: DefaultTheme.Sidebar = {
           ],
         },
         {
+          text: '协议兼容',
+          collapsed: false,
+          items: [
+            { text: '豆包协议兼容 API', link: '/zh-CN/practices/protocol-compatibility/doubao/' },
+          ],
+        },
+        {
           text: '项目实践',
           collapsed: false,
           items: [
