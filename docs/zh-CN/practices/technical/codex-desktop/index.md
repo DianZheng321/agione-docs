@@ -116,7 +116,7 @@ DeepSeek / GLM / Gemini / GPT, etc.
 
 ---
 
-## 步骤5：配置CC交换机
+## 步骤5：配置CC Switch
 
 ### 5\.1 在CC Switch中打开Codex页面
 
@@ -229,7 +229,7 @@ Hello! Tell me who you are and which model you are using.
 
 ## 配置文件（自动生成）
 
-CC 交换机可自动管理以下文件：
+CC Switch可自动管理以下文件：
 
 **`~/.codex/auth.json`**
 
@@ -275,7 +275,7 @@ base_url = "https://agione.pro/hyperone/xapi/api"
 |AGIOne|[https://agione\.pro](https://agione.pro)|
 |CC 开关官方|[https://ccswitch\.io](https://ccswitch.io)|
 |CC Switch GitHub|[https://github\.com/farion1231/cc\-switch](https://github.com/farion1231/cc-switch)|
-|CC 交换机版本发布|[https://github\.com/farion1231/cc\-switch/releases](https://github.com/farion1231/cc-switch/releases)|
+|CC Switch版本发布|[https://github\.com/farion1231/cc\-switch/releases](https://github.com/farion1231/cc-switch/releases)|
 
 ---
 
