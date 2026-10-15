@@ -72,11 +72,11 @@ DeepSeek / GLM / Gemini / GPT, etc.
 
 2. 登录或创建账户。
 
-3. 登录后，依次前往**设置**、**我的密钥**，进入**模型API密钥**页面。
+3. 登录后，依次前往**设置**、**我的 Keys**，进入**模型API密钥**页面。
 
-![AGIOne 设置 - 我的密钥 - 模型API密钥页面](codex-desktop-pics/step3-agione-model-api-keys.png)
+![AGIOne 设置 - 我的 Keys - 模型API密钥页面](codex-desktop-pics/step3-agione-model-api-keys.png)
 
-4. 点击**创建 API 密钥**（或**\+ 新建**）。
+4. 点击**创建 key**（或**\+ 新建**）。
 
 - 为其指定一个名称（例如，`codex-cc-switch`）
 
@@ -88,9 +88,9 @@ DeepSeek / GLM / Gemini / GPT, etc.
 
 ---
 
-## 步骤4：查找您的设备型号信息
+## 步骤4：查找您的模型信息
 
-1. 在 AGIOne 中，前往顶部菜单的**“模型服务”**选项。
+1. 在 AGIOne 中，前往顶部菜单的**“模型及AI服务”**选项。
 
 ![AGIOne 模型服务菜单](codex-desktop-pics/step4-model-services-menu.png)
 
@@ -100,13 +100,13 @@ DeepSeek / GLM / Gemini / GPT, etc.
 
 ![搜索并选择 DeepSeek-V4-Flash 模型](codex-desktop-pics/step4-select-deepseek-v4-flash.png)
 
-3. 复制**模型ID**和**基础URL**
+3. 复制**Model ID**和**基Base URL**
 
-- 前往**快速入门，**复制**模型ID**
+- 前往**快速开始，**复制**Model ID**
 
 ![快速入门页 - 复制模型ID](codex-desktop-pics/step4-copy-model-id.png)
 
-- 前往**快速入门，**复制**基础URL**
+- 前往**快速开始，**复制**Base URL**
 
 ![快速入门页 - 复制基础URL](codex-desktop-pics/step4-copy-base-url.png)
 
